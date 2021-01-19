@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 //show person based on item
-function showPerson(currentItem) {
+function showPerson() {
   const item = reviews[currentItem];
   img.src = item.img;
   author.textContent = item.name;
@@ -82,3 +82,15 @@ prevBtn.addEventListener('click', function () {
   }
   showPerson();
 });
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * reviews.length); //forma de fazer c q a geracao de random numbers fique limitada ao numero de elementos do array + arrendondada
+}
+
+//random person
+randomBtn.addEventListener('click', function () {
+  const randomNumber = getRandomNumber();
+  currentItem = randomNumber;
+  showPerson();
+});
+
